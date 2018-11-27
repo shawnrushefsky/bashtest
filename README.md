@@ -7,7 +7,7 @@ An extremely minimalist testing framework for bash scripts.
 Use gitmodules to install bashtest:
 
 ```shell
-git submodules add git@github.com:shawnrushefsky/bashtest.git
+git submodule add git@github.com:shawnrushefsky/bashtest.git
 ```
 
 Then source it in your test file
