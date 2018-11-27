@@ -12,7 +12,7 @@ Place `bashtest.sh` somewhere where your test script can source it.
 # Source bashtest, and pass it the title of your test suite
 . bashtest.sh "My Application"
 
-# Verify that the secrets binary exists
+# test some sort of function
 test "echo works on this box" \
 "-n" "$(echo hello world)" # This can be any number of arguments. In this case, we are testing that the output of "echo hello world" is not empty.
 
