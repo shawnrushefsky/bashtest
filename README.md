@@ -19,6 +19,18 @@ test "echo works on this box" \
 summarize
 ```
 
+You'll see an output like:
+
+```
+My Application
+- [✓] echo works on this box
+
+Success!
+1 / 1 Tests Passing
+```
+
+Your script will exit 0 if all tests pass, and exit 1 if any tests fail.
+
 ### test
 
 Usage: `test <description> [<arguments>...]`
