@@ -4,13 +4,19 @@ An extremely minimalist testing framework for bash scripts.
 
 ## Use
 
-Place `bashtest.sh` somewhere where your test script can source it.
+Use gitmodules to install bashtest:
+
+```shell
+git submodules add git@github.com:shawnrushefsky/bashtest.git
+```
+
+Then source it in your test file
 
 ```shell
 #!/bin/bash
 
 # Source bashtest, and pass it the title of your test suite
-. bashtest.sh "My Application"
+. bashtest/bashtest.sh "My Application"
 
 # test some sort of function
 test "echo works on this box" \
