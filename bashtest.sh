@@ -6,6 +6,7 @@ BOLD="\e[1m"
 
 TOTAL_FAILURES=0
 TOTAL_SUCCESSES=0
+declare -a FAILURES
 
 echo -e "${NOFORMAT}${BOLD}$1${NOFORMAT}"
 
@@ -14,12 +15,13 @@ test () {
     MSG="$1"
     shift
 
-    if [ "$@" ]
+    if [ "$@" ];
     then
         echo -e "${GREEN}- [✓] $MSG${NOFORMAT}"
         TOTAL_SUCCESSES=$((TOTAL_SUCCESSES + 1))
     else
         echo -e "${RED}- [x] $MSG${NOFORMAT}"
+        FAILURES[TOTAL_FAILURES]="$@"
         TOTAL_FAILURES=$((TOTAL_FAILURES + 1))
     fi
 }
@@ -31,6 +33,9 @@ summarize () {
     if [ $TOTAL_FAILURES -ne 0 ]
     then
         echo -e "${RED}Oh No!\n$MSG"
+        for failure in ${farm_hosts[@]}; do
+            echo $failure
+        done
         exit 1
     else
         echo -e "${GREEN}Success!\n$MSG"
